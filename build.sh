@@ -7,6 +7,6 @@ rm -rf $DST
 mkdir  $DST
 mkdir  $DST/tls
 mkdir  $DST/records
-cp     tls/README.md $DST/tls/README.md
+cp     tls $DST/ -r
 cp     witty LICENSE $DST
 echo   "[]" > $DST/user.db
