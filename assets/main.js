@@ -25,15 +25,15 @@ function createTerminal(path) {
 
   const term = new Terminal({
     fontFamily: `'Fira Code', ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace`,
-    fontSize: 14,
-    lineHeight: 1,
+    fontSize: 15,
+    lineHeight: 1.5,
     theme: baseTheme,
     convertEol: true,
     cursorBlink: true,
   });
 
   term.open(document.getElementById('terminal_view'));
-  term.resize(80, 36);
+  term.resize(100, 36);
 
   const weblinksAddon = new WebLinksAddon.WebLinksAddon();
   term.loadAddon(weblinksAddon);
