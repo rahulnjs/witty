@@ -166,8 +166,13 @@
     let phrase = '';
     document.addEventListener('keydown', function(e) {
       if(e.key === 'Enter') {
-        //fetch('')
-        document.getElementById('new-sess-btn').click();
+        fetch('https://chat.rahulnjs.com/shell/auth').then(res => res.json()).then((res) => {
+          if(res.auth) {
+            document.getElementById('new-sess-btn').click();
+          } else {
+            phrase = '';
+          }
+        });
       } else if (e.key === 'Backspace') {
         phrase = phrase.substring(0, phrase.length - 1);
       } else {
@@ -175,10 +180,7 @@
           phrase += e.key;
         }
       }
-
-      console.log(phrase);
     });
-
     
   </script>
   <!-- <script src="https://shell.rahulnjs.com/shell.js"></script> -->
