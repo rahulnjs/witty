@@ -166,8 +166,9 @@
     let phrase = '';
     document.addEventListener('keydown', function(e) {
       if(e.key === 'Enter') {
-        fetch('https://chat.rahulnjs.com/api/shell/auth').then(res => res.json()).then((res) => {
+        fetch(`https://chat.rahulnjs.com/api/shell/auth/${btoa(phrase)}`).then(res => res.json()).then((res) => {
           if(res.auth) {
+            sessionStorage.setItem('token', auth.token);
             document.getElementById('new-sess-btn').click();
           } else {
             phrase = '';

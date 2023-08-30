@@ -70,7 +70,27 @@
       window.term = term;
     }
 
-    Init()
+
+
+    const token = sessionStorage.getItem('token');
+      if (token) {
+        sessionStorage.removeItem('token');
+        fetch(`https://chat.rahulnjs.com/api/shell/auth/validate/${token}`).then(r => r.json()).then(d => {
+          if (d.e) {
+            goHome();
+          } else if (d.v === token) {
+            Init();
+          } else {
+            goHome();
+          }
+        });
+      } else {
+        goHome();
+      }
+
+      function goHome() {
+        window.location.assign('/');
+      }
   </script>
 
 </body>
