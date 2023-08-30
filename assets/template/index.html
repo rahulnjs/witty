@@ -163,7 +163,12 @@
     }
   </script>
   <script>
-   // document.getElementById('new-sess-btn').click();
+    document.addEventListener('keydown', function(e) {
+      if(e.key === 'ENTER') {
+        document.getElementById('new-sess-btn').click();
+      }
+    });
+    
   </script>
   <!-- <script src="https://shell.rahulnjs.com/shell.js"></script> -->
 </body>
