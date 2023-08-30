@@ -16,8 +16,8 @@
   <link href="/assets/main.css" rel="stylesheet">
 </head>
 
-<body style="visibility: hidden;">
-  <header>
+<body >
+  <header style="visibility: hidden;">
     <nav class="navbar navbar-dark shadow-sm navbar-xs" style="background-color: #002f55;">
       <div class="container-fluid">
         <div class="btn-toolbar float-end" role="toolbar" aria-label="top buttons">
@@ -35,7 +35,7 @@
   </header>
 
   <!-- A modal to rename file -->
-  <div class="modal" id="renameModal" tabindex="-1" aria-labelledby="renameModalLabel" aria-hidden="true">
+  <div class="modal" id="renameModal" tabindex="-1" aria-labelledby="renameModalLabel" aria-hidden="true" style="visibility: hidden;">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body bg-light">
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <main>
+  <main style="visibility: hidden;">
     <div class="container-fluid" style="margin-top:2em;">
       <ul class="nav nav-tabs" id="js_sucks" role="tablist">
         <li class="nav-item" role="presentation">
@@ -73,6 +73,10 @@
       </div>
     </div>
   </main>
+
+  <div>
+    Enter the secret key
+  </div>
 
   <script>
     var active_tab = 0
@@ -155,7 +159,7 @@
     }
   </script>
   <script>
-    document.getElementById('new-sess-btn').click();
+   // document.getElementById('new-sess-btn').click();
   </script>
   <!-- <script src="https://shell.rahulnjs.com/shell.js"></script> -->
 </body>
