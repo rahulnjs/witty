@@ -71,7 +71,7 @@ func newInteractive(c *gin.Context) {
 	id := uniuri.New()
 
 	c.HTML(http.StatusOK, "term.html", gin.H{
-		"title":     "interactive terminal",
+		"title":     "A Terminal",
 		"path":      "/ws_new/" + id,
 		"id":        id,
 		"logo":      "keyboard",

@@ -22,7 +22,7 @@ const (
 	viewWait  = 3 * time.Second
 
 	// Time allowed to read the next pong message from the peer.
-	pongWait = 10 * time.Second
+	pongWait = 600 * time.Second
 
 	// Maximum message size allowed from peer.
 	maxMessageSize  = 4096
