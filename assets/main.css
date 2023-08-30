@@ -1,7 +1,11 @@
+body {
+    background-color: #282a36;
+}
+
 #terminal {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    margin: 10px 0 10px;
+    margin: 10px 0 10px; */
 }
 
 #terminal #terminal_view {
