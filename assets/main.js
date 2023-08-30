@@ -26,14 +26,14 @@ function createTerminal(path) {
   const term = new Terminal({
     fontFamily: `'Fira Code', ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace`,
     fontSize: 14,
-    lineHeight: 2,
+    lineHeight: 1,
     theme: baseTheme,
     convertEol: true,
     cursorBlink: true,
   });
 
   term.open(document.getElementById('terminal_view'));
-  term.resize(120, 36);
+  term.resize(80, 36);
 
   const weblinksAddon = new WebLinksAddon.WebLinksAddon();
   term.loadAddon(weblinksAddon);
