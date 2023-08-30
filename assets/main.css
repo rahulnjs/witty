@@ -5,7 +5,7 @@ body {
 #auth {
     font-family: 'Handjet', cursive;
     color: #acacac;
-    font-size: 2rem;
+    font-size: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +13,7 @@ body {
     position: absolute;
     top: 0;
     width: 100vw;
+    flex-direction: column;
 }
 
 #terminal {
