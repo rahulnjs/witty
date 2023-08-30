@@ -73,8 +73,9 @@
 
 
     const token = sessionStorage.getItem('token');
+
       if (token) {
-        sessionStorage.removeItem('token');
+       // sessionStorage.removeItem('token');
         fetch(`https://chat.rahulnjs.com/api/shell/auth/validate/${token}`).then(r => r.json()).then(d => {
           if (d.e) {
             goHome();
