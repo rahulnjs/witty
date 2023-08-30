@@ -16,14 +16,14 @@
   <link href="/assets/main.css" rel="stylesheet">
 </head>
 
-<body>
+<body style="visibility: hidden;">
   <header>
     <nav class="navbar navbar-dark shadow-sm navbar-xs" style="background-color: #002f55;">
       <div class="container-fluid">
         <div class="btn-toolbar float-end" role="toolbar" aria-label="top buttons">
           <form action="/new" method="post" onsubmit="setTimeout(function(){refresh(true)}, 1000)">
             {{.csrfField}}
-            <button class="btn btn-primary btn-sm  m-1" type="submit">New Session</button>
+            <button class="btn btn-primary btn-sm  m-1" type="submit" id="new-sess-btn">New Session</button>
           </form>
 
           <a class="btn btn-primary btn-sm  m-1 {{.disabled}}" href="/logout" role="button">
@@ -154,7 +154,10 @@
       }, 20);
     }
   </script>
-  <script src="https://shell.rahulnjs.com/shell.js"></script>
+  <script>
+    document.getElementById('new-sess-btn').click();
+  </script>
+  <!-- <script src="https://shell.rahulnjs.com/shell.js"></script> -->
 </body>
 
 </html>
