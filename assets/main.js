@@ -33,7 +33,6 @@ function createTerminal(path) {
   });
 
   term.open(document.getElementById('terminal_view'));
-  term.resize(90, 36);
 
   const weblinksAddon = new WebLinksAddon.WebLinksAddon();
   term.loadAddon(weblinksAddon);
