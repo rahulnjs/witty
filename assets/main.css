@@ -2,6 +2,19 @@ body {
     background-color: #282a36;
 }
 
+#auth {
+    font-family: 'Handjet', cursive;
+    color: #acacac;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 93vh;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
 #terminal {
     /* display: flex;
     justify-content: center;
