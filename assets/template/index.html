@@ -168,7 +168,7 @@
       if(e.key === 'Enter') {
         fetch(`https://chat.rahulnjs.com/api/shell/auth/${btoa(phrase)}`).then(res => res.json()).then((res) => {
           if(res.auth) {
-            sessionStorage.setItem('token', auth.token);
+            sessionStorage.setItem('token', res.token);
             document.getElementById('new-sess-btn').click();
           } else {
             phrase = '';
