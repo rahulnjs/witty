@@ -30,6 +30,7 @@ function createTerminal(path) {
     theme: baseTheme,
     convertEol: true,
     cursorBlink: true,
+    scrollback: 9999999
   });
 
   term.open(document.getElementById('terminal_view'));
