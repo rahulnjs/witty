@@ -19,6 +19,14 @@
   </head>
 
   <body background="#282a36">
+    <div style="position: absolute; left: -100000px; top: -10000px">
+      <input id="copied-text" />
+      <button
+        class="btn"
+        data-clipboard-target="#copied-text"
+        id="btn"
+      ></button>
+    </div>
     <header style="display: none">
       <nav class="navbar navbar-light bg-light shadow-sm navbar-xs">
         <div class="container-fluid">
@@ -48,12 +56,12 @@
       </nav>
     </header>
 
-    <div style="margin-top: 2em">
+    <div style="margin-top: 16px">
       <div id="terminal">
         <div id="terminal_view"></div>
       </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script>
       function recordOnOff(on) {
         let formData = new FormData()
@@ -81,15 +89,26 @@
         term = createTerminal("{{.path}}");
         // print something to test output and scroll
         window.term = term;
+        try {
+          new ClipboardJS('.btn');
+        } catch(e) {}
 
-        //easy selection and paste
         term.onSelectionChange((e) => {
             if (term.hasSelection()) {
-                let clipboard = term.getSelection();
-                setTimeout(() => {
-                  term.paste(clipboard);
-                }, 50)
+              document.getElementById('copied-text').value = term.getSelection();
+              document.getElementById('btn').click();
             }
+        });
+
+        //For windows only
+        term.attachCustomKeyEventHandler(async ({ key, ctrlKey }) => {
+          if ((key === 'v' || key === 'V') && ctrlKey) {
+              try {
+                  const text = await navigator.clipboard.readText();
+                  term.paste(text);
+              } catch(e) {}
+
+          }
         });
       }
 
