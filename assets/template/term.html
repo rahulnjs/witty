@@ -101,9 +101,9 @@
         });
 
         //For windows only
-        term.attachCustomKeyEventHandler(async ({ key, ctrlKey }) => {
+        term.attachCustomKeyEventHandler(({ key, ctrlKey }) => {
           if ((key === 'v' || key === 'V') && ctrlKey) {
-              try {
+             /* try {
                   const text = await navigator.clipboard.readText();
                   //^[[200~XXXXX~
                   console.log(text);
@@ -111,7 +111,8 @@
                   console.log(x);
 
                   term.paste(x ? x[1] : text);
-              } catch(e) {}
+              } catch(e) {}*/
+              return false;
 
           }
         });
