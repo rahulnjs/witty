@@ -110,7 +110,7 @@
                   const x = text.match(/\^\[\[200~(.*)~/);
                   console.log(x);
 
-                  term.paste(text.match(/\^\[\[200~(.*)~/)[1] || text);
+                  term.paste(x ? x[1] : text);
               } catch(e) {}
 
           }
