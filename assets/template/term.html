@@ -103,17 +103,7 @@
         //For windows only
         term.attachCustomKeyEventHandler(({ key, ctrlKey }) => {
           if ((key === 'v' || key === 'V') && ctrlKey) {
-             /* try {
-                  const text = await navigator.clipboard.readText();
-                  //^[[200~XXXXX~
-                  console.log(text);
-                  const x = text.match(/\^\[\[200~(.*)~/);
-                  console.log(x);
-
-                  term.paste(x ? x[1] : text);
-              } catch(e) {}*/
-              return false;
-
+            return false;
           }
         });
       }
