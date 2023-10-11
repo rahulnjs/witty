@@ -105,7 +105,9 @@
           if ((key === 'v' || key === 'V') && ctrlKey) {
               try {
                   const text = await navigator.clipboard.readText();
-                  term.paste(text);
+                  //^[[200~XXXXX~
+                  console.log(text);
+                  term.paste(text.match(/\^\[\[200~(.*)~/)[1]);
               } catch(e) {}
 
           }
